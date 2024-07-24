@@ -1,28 +1,42 @@
 ﻿
+
     <nav class="navbar navbar-expand-lg bg-white navbar-light py-0 px-4">
         <a href="index.html" class="navbar-brand d-flex align-items-center text-center">
             <div class="icon p-2 me-2">
-                <img class="img-fluid" src="img/icon-deal.png" alt="Icon" style="width: 30px; height: 30px;">
+            <img class="~/real-estate-html-template/img-fluid" src="~/real-estate-html-template/img/icon-deal.png" alt="Icon" style="width: 30px; height: 30px;">
             </div>
-            <h1 class="m-0 text-primary">Makaan</h1>
+            <h1 class="m-0 text-primary">EMLAKJET</h1>
         </a>
         <button type="button" class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
             <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarCollapse">
             <div class="navbar-nav ms-auto">
-                <a href="index.html" class="nav-item nav-link">Anasayfa</a>
-                <a href="about.html" class="nav-item nav-link active">Hakkımızda</a>
+                <a href="index.html" class="nav-item nav-link active">Anasayfa</a>
+                <a href="about.html" class="nav-item nav-link">Hakkımızda</a>
                 <div class="nav-item dropdown">
                     <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Gayri Menkul</a>
                     <div class="dropdown-menu rounded-0 m-0">
-                        <a href="property-list.html" class="dropdown-item">Villa</a>
-                    <a href="property-list.html" class="dropdown-item">Rezidans</a>
-                    <a href="property-list.html" class="dropdown-item">Toprak-Arazi</a>
-                    <a href="property-list.html" class="dropdown-item">Yazlık</a>
+                        <a href="Villa.html" class="dropdown-item">Villa</a>
+                        <a href="Rezidans.html" class="dropdown-item">Rezidans</a>
+                        <a href="Toprak-Arazisi.html" class="dropdown-item">Toprak-Arazi</a>
+                        <a href="Yazlik.html" class="dropdown-item">Yazlık</a>
+                    </div>
                 </div>
-                </div>
-               
                 <a href="contact.html" class="nav-item nav-link">İletişim</a>
-            
+            </div>
+        </div>
     </nav>
+
+    <script src="path_to_bootstrap.js"></script>
+
+<style>
+    .navbar {
+
+        position: relative; /* position özelliği ayarlanmalı */
+        z-index: 10; /* navbar'ın z-index değeri */
+        margin-top: 50px;
+    }
+
+
+</style>

@@ -1,0 +1,34 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+@await Component.InvokeAsync("_HeadUILayoutComponentPartial")
+<body>
+    
+    @await Component.InvokeAsync("_NavbarUILayoutComponentPartial")
+
+    @await Component.InvokeAsync("_DefaultCoverUILayoutComponentPartial")
+
+    @await Component.InvokeAsync("_SearchUILayoutComponentPartial")
+
+    @await Component.InvokeAsync("_DefaultCategoryUILayoutComponentPartial")
+
+    @await Component.InvokeAsync("_AboutUsComponentPartial")
+
+    @await Component.InvokeAsync("_DefaultRealEstateListUILayoutComponentPartial")
+
+    @await Component.InvokeAsync("_DefaultAgentInfoUILayoutComponentPartial")
+
+    @await Component.InvokeAsync("_DefaultPropertyAgentsUILayoutComponentPartial")
+
+    @await Component.InvokeAsync("_DefaultTestimonialUILayoutComponentPartial")
+
+    @await Component.InvokeAsync("_FooterUILayoutComponentPartial")
+
+    @await Component.InvokeAsync("_ScriptUILayoutComponentPartial")
+</body>
+</html>

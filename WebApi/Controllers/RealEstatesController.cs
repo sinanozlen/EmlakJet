@@ -22,7 +22,7 @@ namespace WebApi.Controllers
             _logger = logger;
         }
 
-        // Tüm emlakları listele
+
         [HttpGet]
         public IActionResult GetRealEstateList()
         {
@@ -42,7 +42,6 @@ namespace WebApi.Controllers
             }
         }
 
-        // ID'ye göre emlak detayını getir
         [HttpGet("{id}")]
         public IActionResult GetRealEstateDetail(int id)
         {
@@ -62,7 +61,7 @@ namespace WebApi.Controllers
             }
         }
 
-        // ID'ye göre emlak bilgisini sil
+
         [HttpDelete("{id}")]
         public IActionResult DeleteRealEstate(int id)
         {
@@ -84,7 +83,7 @@ namespace WebApi.Controllers
             }
         }
 
-        // Yeni bir emlak bilgisi oluştur
+
         [HttpPost]
         public IActionResult CreateRealEstate(CreateRealEstateDto createRealEstateDto)
         {
@@ -118,7 +117,7 @@ namespace WebApi.Controllers
             }
         }
 
-        // Emlak bilgisini güncelle
+
         [HttpPut]
         public IActionResult UpdateRealEstate(UpdateRealEstateDto updateRealEstateDto)
         {
@@ -155,7 +154,7 @@ namespace WebApi.Controllers
             }
         }
 
-        // Kategoriye göre emlakları listele
+
         [HttpGet("GetRealEstateByCategoryName")]
         public IActionResult GetRealEstateByCategoryName()
         {
@@ -175,7 +174,7 @@ namespace WebApi.Controllers
             }
         }
 
-        // Satış durumuna göre emlakları listele
+
         [HttpGet("GetRealEstateByStatus/{saleStatus}")]
         public IActionResult GetRealEstateByStatus(string saleStatus)
         {

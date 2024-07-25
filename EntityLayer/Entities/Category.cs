@@ -8,8 +8,9 @@ namespace EntityLayer.Entities
 {
     public class Category
     {
-        public string CategoryId { get; set; }
+        public int CategoryId { get; set; }
         public string CategoryName { get; set; }
         public string ImageUrl { get; set; }
+        public List<RealEstate> RealEstates { get; set; }
     }
 }

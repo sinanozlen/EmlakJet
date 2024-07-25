@@ -10,9 +10,10 @@ using System.Threading.Tasks;
 
 namespace DataAccessLayer.EntityFramework
 {
-    public class EfContactAddressDal:GenericRepository<ContactAddress>,IContactAddressDal
+    public class EfContactAddressDal : GenericRepository<ContactAddress>, IContactAddressDal
     {
         public EfContactAddressDal(EmlakJetContext emlakJetContext) : base(emlakJetContext)
-    {
+        {
+        }
     }
 }

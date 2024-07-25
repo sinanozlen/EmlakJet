@@ -10,9 +10,10 @@ using System.Threading.Tasks;
 
 namespace DataAccessLayer.EntityFramework
 {
-    public class EfFooterImageGalleryDal:GenericRepository<FooterImageGallery>, IFooterImageGallery
+    public class EfFooterImageGalleryDal : GenericRepository<FooterImageGallery>, IFooterImageGalleryDal
     {
         public EfFooterImageGalleryDal(EmlakJetContext emlakJetContext) : base(emlakJetContext)
-    {
+        {
+        }
     }
 }

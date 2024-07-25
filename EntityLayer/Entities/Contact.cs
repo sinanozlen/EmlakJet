@@ -8,7 +8,7 @@ namespace EntityLayer.Entities
 {
     public class Contact
     {
-        public string ContactId { get; set; }
+        public int ContactId { get; set; }
         public string NameSurname { get; set; }
         public string Email { get; set; }
         public string Subject { get; set; }

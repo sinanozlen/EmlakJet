@@ -1,4 +1,5 @@
-﻿using EntityLayer.Entities;
+﻿using EntitityLayer.Entities;
+using EntityLayer.Entities;
 using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
@@ -38,6 +39,8 @@ namespace DataAccessLayer.Concrete
         public DbSet<PropertyAgent> PropertyAgents { get; set; }
         public DbSet<RealEstate> RealEstates { get; set; }
         public DbSet<Testimonial> Testimonials { get; set; }
+        public DbSet<AppUser>AppUsers { get; set; }
+        public DbSet<AppRole> AppRoles { get; set; }
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             modelBuilder.Entity<FooterImageGallery>()

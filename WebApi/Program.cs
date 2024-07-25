@@ -3,6 +3,10 @@ using BusinessLayer.Concrete;
 using DataAccessLayer.Abstract;
 using DataAccessLayer.Concrete;
 using DataAccessLayer.EntityFramework;
+using DataAccessLayer.Tools;
+using Microsoft.AspNetCore.Authentication.JwtBearer;
+using Microsoft.IdentityModel.Tokens;
+using System.Text;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -44,6 +48,10 @@ builder.Services.AddScoped<IPropertyAgentDal, EfPropertyAgentDal>();
 builder.Services.AddScoped<IRealEstateService, RealEstateManager>();
 builder.Services.AddScoped<IRealEstateDal, EfRealEstateDal>();
 
+//AppUser
+builder.Services.AddScoped<IAppUserService, AppUserManager>();
+builder.Services.AddScoped<IAppUserDal, EfAppUserDal>();
+
 //Banner
 builder.Services.AddScoped<IBannerService, BannerManager>();
 builder.Services.AddScoped<IBannerDal, EfBannerDal>();
@@ -61,6 +69,30 @@ builder.Services.AddScoped<IFooterAddressService, FooterAddressManager>();
 builder.Services.AddScoped<IFooterAddressDal, EfFooterAddressDal>();
 
 #endregion 
+
+
+builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme).AddJwtBearer(opt =>
+{
+    opt.RequireHttpsMetadata = false;
+    opt.TokenValidationParameters = new TokenValidationParameters
+    {
+        ValidAudience = JwtTokenDefaults.ValidAudience,
+        ValidIssuer = JwtTokenDefaults.ValidIssuer,
+        ClockSkew = TimeSpan.Zero,
+        IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(JwtTokenDefaults.Key)),
+        ValidateLifetime = true,
+        ValidateIssuerSigningKey = true
+    };
+});
+
+builder.Services.AddCors(options =>
+{
+    options.AddPolicy("AllowAllOrigins",
+        builder => builder.AllowAnyOrigin()
+                          .AllowAnyMethod()
+                          .AllowAnyHeader());
+});
+builder.Services.AddControllers();
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
@@ -71,7 +103,7 @@ if (app.Environment.IsDevelopment())
 }
 
 app.UseHttpsRedirection();
-
+app.UseAuthentication();
 app.UseAuthorization();
 
 app.MapControllers();

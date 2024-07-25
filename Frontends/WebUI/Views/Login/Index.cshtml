@@ -1,0 +1,84 @@
+﻿@using System.Web
+@model CreateLoginDto
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Emlak Jet Login Sayfası</title>
+    <!-- Mobile Specific Metas -->
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <!-- Font-->
+    <link rel="stylesheet" type="text/css" href="~/colorlib-regform-30/css/opensans-font.css">
+    <link rel="stylesheet" type="text/css" href="~/colorlib-regform-30/fonts/line-awesome/css/line-awesome.min.css">
+    <!-- Jquery -->
+    <link rel="stylesheet" href="https://jqueryvalidation.org/files/demo/site-demos.css">
+    <!-- Main Style Css -->
+    <link rel="stylesheet" href="~/colorlib-regform-30/css/style.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">
+</head>
+<body class="form-v4">
+    <div class="page-content">
+        <div class="form-v4-content">
+            <div class="form-left">
+                <h2>Emlak Jet</h2>
+                <p class="text-1">Hayalinizdeki eve bir adım daha yaklaşın! EmlakJet platformumuzda güncel satılık ve kiralık ilanlarını inceleyebilir, size özel fırsatlardan ve kampanyalardan anında haberdar olabilirsiniz. Hemen oturum açın ve ayrıcalıkları keşfetmeye başlayın.</p>
+                <p class="text-2">İlanları favorilerinize eklemek, detaylı bilgi almak veya iletişime geçmek için oturum açmanız gerekmektedir. Henüz bir hesabınız yoksa aşağıda kolayca kayıt olabilirsiniz</p>
+                <div class="form-left-last">
+                    <a href="/Register/CreateAppUser/" style="height:35px" class="account">Kayıt Ol</a>
+                </div>
+            </div>
+            <form class="form-detail" method="post">
+                <h2>MultiShop Giriş Formu</h2>
+                <div class="form-row">
+                    <label for="your_username">Kullanıcı Adınız</label>
+                    <input type="text" id="your_username" asp-for="Username" class="input-text" required>
+                </div>
+                <div class="form-row">
+                    <label for="your_password">Şifreniz</label>
+                    <input type="password" id="your_password" asp-for="Password" class="input-text" required>
+                </div>
+
+                <div class="form-row-last">
+                    <button class="register" style="height:35px">Giriş Yap</button>
+                </div>
+            </form>
+        </div>
+    </div>
+    <script src="https://code.jquery.com/jquery-1.11.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/jquery.validation/1.16.0/jquery.validate.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/jquery.validation/1.16.0/additional-methods.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
+    <script>
+        $(document).ready(function () {
+            var loginSuccess = '@Html.Raw(HttpUtility.JavaScriptStringEncode(TempData["LoginSuccess"]?.ToString()))';
+            var loginFailed = '@Html.Raw(HttpUtility.JavaScriptStringEncode(TempData["LoginFailed"]?.ToString()))';
+
+            if (loginSuccess) {
+                Toastify({
+                    text: loginSuccess,
+                    duration: 4000,
+                    close: true,
+                    gravity: "top",
+                    position: "right",
+                    backgroundColor: "#4CAF50",
+                }).showToast();
+            }
+
+            if (loginFailed) {
+                Toastify({
+                    text: loginFailed,
+                    duration: 4000,
+                    close: true,
+                    gravity: "top",
+                    position: "right",
+                    backgroundColor: "#FF0000",
+                }).showToast();
+            }
+        });
+    </script>
+</body>
+</html>

@@ -4,47 +4,23 @@
 
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    @await Component.InvokeAsync("_HeadUILayoutComponentPartial")
 
-</head>
+@await Component.InvokeAsync("_HeadUILayoutComponentPartial")
+
 <body>
 
-    <!-- Navbar Start -->
+
     @await Component.InvokeAsync("_NavbarUILayoutComponentPartial")
-    <!-- Navbar End -->
-    <!-- Header Start -->
-    @await Component.InvokeAsync("_DefaultCoverUILayoutComponentPartial")
-    <!-- Header End -->
-    <!-- Search Start -->
+
+    @await Component.InvokeAsync("_DirectoryAlertUILayoutComponentPartial")
+
     @await Component.InvokeAsync("_SearchUILayoutComponentPartial")
-    <!-- Search End -->
-    <!-- Category Start -->
-    @await Component.InvokeAsync("_DefaultCategoryUILayoutComponentPartial")
-    <!-- Category End -->
-    <!-- About Start -->
-    @await Component.InvokeAsync("_AboutUsComponentPartial")
-    <!-- About End -->
-    <!-- Property List Start -->
-    @await Component.InvokeAsync("_DefaultRealEstateListUILayoutComponentPartial")
-    <!-- Property List End -->
-    <!-- Call to Action Start -->
-    @await Component.InvokeAsync("_DefaultAgentInfoUILayoutComponentPartial")
-    <!-- Call to Action End -->
-    <!-- Team Start -->
-    @await Component.InvokeAsync("_DefaultPropertyAgentsUILayoutComponentPartial")
-    <!-- Team End -->
-    <!-- Testimonial Start -->
-    @await Component.InvokeAsync("_DefaultTestimonialUILayoutComponentPartial")
-    <!-- Testimonial End -->
-    <!-- Footer Start -->
+
+    @RenderBody()
+
     @await Component.InvokeAsync("_FooterUILayoutComponentPartial")
-    <!-- Footer End -->
-    <!-- JS Start -->
+
     @await Component.InvokeAsync("_ScriptUILayoutComponentPartial")
-    <!-- JS End -->
 
 </body>
-
 </html>
-

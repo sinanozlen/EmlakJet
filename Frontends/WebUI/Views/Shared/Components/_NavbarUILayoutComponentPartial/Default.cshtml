@@ -21,17 +21,18 @@
         </button>
         <div class="collapse navbar-collapse" id="navbarCollapse">
             <div class="navbar-nav ms-auto">
-                <a href="index.html" class="nav-item nav-link active">Anasayfa</a>
-                <a href="about.html" class="nav-item nav-link">Hakkımızda</a>
+                <a href="/Default/Index" class="nav-item nav-link active">Anasayfa</a>
+                <a href="/About/Index" class="nav-item nav-link">Hakkımızda</a>
                 <div class="nav-item dropdown">
                     <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Gayri Menkul</a>
                     <div class="dropdown-menu rounded-0 m-0">
-                        <a href="property-list.html" class="dropdown-item">Öne Çıkan Taşınmazlar</a>
-                    <a href="property-list.html" class="dropdown-item">Kategoriler</a>
+                        <a href="/RealEstate/Index" class="dropdown-item">Tüm Taşınmazlar</a>
+                    <a href="/Category/Index" class="dropdown-item">Kategoriler</a>
+                    <a href="/PropertyAgent/Index" class="dropdown-item">Çalışma Arkadaşlarımız</a>
                 </div>
                 </div>
                
-                <a href="contact.html" class="nav-item nav-link">İletişim</a>
+                <a href="/Contact/Index" class="nav-item nav-link">İletişim</a>
                     @if (Model.IsAuthenticated)
                     {
                         <li class="nav-item dropdown">

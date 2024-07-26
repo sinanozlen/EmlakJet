@@ -1,0 +1,10 @@
+﻿
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/UILayout/Index.cshtml";
+}
+
+@await Component.InvokeAsync("_DefaultRealEstateListUILayoutComponentPartial")
+
+@await Component.InvokeAsync("_DefaultAgentInfoUILayoutComponentPartial")
+

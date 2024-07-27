@@ -1,8 +1,36 @@
 ﻿@{
-    ViewData["Title"] = "Home Page";
+    Layout = null;
 }
 
-<div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://learn.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
-</div>
+<!DOCTYPE html>
+<html lang="en">
+
+@await Component.InvokeAsync("_HeadUILayoutComponentPartial")
+
+<body>ğ
+
+
+    @await Component.InvokeAsync("_NavbarUILayoutComponentPartial")
+
+    @await Component.InvokeAsync("_DefaultCoverUILayoutComponentPartial")
+
+    @await Component.InvokeAsync("_SearchUILayoutComponentPartial")
+
+    @await Component.InvokeAsync("_DefaultCategoryUILayoutComponentPartial")
+
+    @await Component.InvokeAsync("_AboutUsComponentPartial")
+
+    @await Component.InvokeAsync("_DefaultRealEstateListUILayoutComponentPartial")
+
+    @await Component.InvokeAsync("_DefaultAgentInfoUILayoutComponentPartial")
+
+    @await Component.InvokeAsync("_DefaultPropertyAgentsUILayoutComponentPartial")
+
+    @await Component.InvokeAsync("_DefaultTestimonialUILayoutComponentPartial")
+
+    @await Component.InvokeAsync("_FooterUILayoutComponentPartial")
+
+    @await Component.InvokeAsync("_ScriptUILayoutComponentPartial")
+
+</body>
+</html>
